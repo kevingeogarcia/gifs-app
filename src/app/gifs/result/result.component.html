@@ -1,0 +1,15 @@
+<ng-container *ngIf="validateSize(); else elseTemplate">
+    <div *ngFor="let gif of result" class="col-md-4 col-sm-6 animate__animated animate__fadeIn animate__slow 1s">
+        <div class="card">
+            <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">{{ gif.title }} </p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+    <div class="col-12 ">
+        <p>No se contraron resultados...</p>
+    </div>
+</ng-template>
